@@ -46,6 +46,13 @@
     XCTAssert([@"description" isEqual: model.description]);
 }
 
+- (void)testYYModel4JSON {
+    SunModel4YY *model = [SunModel4YY yy_modelWithDictionary:_dic];
+
+    NSDictionary *JSONDictionary = [model yy_modelToJSONObject];
+    XCTAssert([JSONDictionary isEqual: _dic]);
+}
+
 - (void)testKVCMentalModel {
     SunModel4KVC *model = [SunModel4KVC new];
     [model setValuesForKeysWithDictionary:_dic];
@@ -59,13 +66,10 @@
     SunModel4KVC *model = [SunModel4KVC new];
     [model setValuesForKeysWithDictionary:_dic];
 
-    XCTAssert([@"酷酷的哀殿" isEqual: model.name]);
-    XCTAssert([@"title" isEqual: model.title]);
-    XCTAssert([@"description" isEqual: model.description]);
-
     NSDictionary *JSONDictionary = [model toDictionary];
     XCTAssert([JSONDictionary isEqual: _dic]);
 }
+
 - (void)testMentalModel {
     NSError *error;
     SunModel4Mantel *model = [[SunModel4Mantel alloc]initWithDictionary:_dic error:&error];
@@ -78,22 +82,17 @@
 - (void)testMentalModel4JSON {
     NSError *error;
     SunModel4Mantel *model = [[SunModel4Mantel alloc]initWithDictionary:_dic error:&error];
-    XCTAssertNil(error);
-    XCTAssert([@"酷酷的哀殿" isEqual: model.name]);
-    XCTAssert([@"title" isEqual: model.title]);
-    XCTAssert([@"description" isEqual: model.description]);
+
     NSDictionary *JSONDictionary = [MTLJSONAdapter JSONDictionaryFromModel:model error:&error];
     XCTAssertNil(error);
     XCTAssert([_dic isEqualToDictionary:JSONDictionary]);
 }
-
-
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
+//
+//- (void)testPerformanceExample {
+//    // This is an example of a performance test case.
+//    [self measureBlock:^{
+//        // Put the code you want to measure the time of here.
+//    }];
+//}
 
 @end
