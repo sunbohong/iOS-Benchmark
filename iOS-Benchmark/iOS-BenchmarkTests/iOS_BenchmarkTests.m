@@ -7,9 +7,13 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "SunModel.h"
+
+#import "SunModel4YY.h"
+#import "SunModel4KVC.h"
+#import "SunModel4Mantel.h"
 
 #import <YYModel/YYModel.h>
+#import <Mantle/MTLModel.h>
 
 @interface iOS_BenchmarkTests : XCTestCase
 
@@ -21,7 +25,11 @@
 
 - (void)setUp {
     [super setUp];
-    _dic = @{@"name":@"酷酷的哀殿"};
+    _dic = @{
+             @"name":@"酷酷的哀殿",
+             @"title":@"title",
+             @"description":@"description"
+             };
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -31,23 +39,55 @@
 }
 
 - (void)testYYModel {
-    SunModel *model = [SunModel yy_modelWithDictionary:_dic];
+    SunModel4YY *model = [SunModel4YY yy_modelWithDictionary:_dic];
 
-    XCTAssertEqual(@"酷酷的哀殿", model.name);
-
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    XCTAssert([@"酷酷的哀殿" isEqual: model.name]);
+    XCTAssert([@"title" isEqual: model.title]);
+    XCTAssert([@"description" isEqual: model.description]);
 }
 
-- (void)testKVC {
-    SunModel *model = [SunModel new];
+- (void)testKVCMentalModel {
+    SunModel4KVC *model = [SunModel4KVC new];
     [model setValuesForKeysWithDictionary:_dic];
 
-    XCTAssertEqual(@"酷酷的哀殿", model.name);
-
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    XCTAssert([@"酷酷的哀殿" isEqual: model.name]);
+    XCTAssert([@"title" isEqual: model.title]);
+    XCTAssert([@"description" isEqual: model.description]);
 }
+
+-(void)testRuntime4JSON {
+    SunModel4KVC *model = [SunModel4KVC new];
+    [model setValuesForKeysWithDictionary:_dic];
+
+    XCTAssert([@"酷酷的哀殿" isEqual: model.name]);
+    XCTAssert([@"title" isEqual: model.title]);
+    XCTAssert([@"description" isEqual: model.description]);
+
+    NSDictionary *JSONDictionary = [model toDictionary];
+    XCTAssert([JSONDictionary isEqual: _dic]);
+}
+- (void)testMentalModel {
+    NSError *error;
+    SunModel4Mantel *model = [[SunModel4Mantel alloc]initWithDictionary:_dic error:&error];
+    XCTAssertNil(error);
+    XCTAssert([@"酷酷的哀殿" isEqual: model.name]);
+    XCTAssert([@"title" isEqual: model.title]);
+    XCTAssert([@"description" isEqual: model.description]);
+}
+
+- (void)testMentalModel4JSON {
+    NSError *error;
+    SunModel4Mantel *model = [[SunModel4Mantel alloc]initWithDictionary:_dic error:&error];
+    XCTAssertNil(error);
+    XCTAssert([@"酷酷的哀殿" isEqual: model.name]);
+    XCTAssert([@"title" isEqual: model.title]);
+    XCTAssert([@"description" isEqual: model.description]);
+    NSDictionary *JSONDictionary = [MTLJSONAdapter JSONDictionaryFromModel:model error:&error];
+    XCTAssertNil(error);
+    XCTAssert([_dic isEqualToDictionary:JSONDictionary]);
+}
+
+
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.

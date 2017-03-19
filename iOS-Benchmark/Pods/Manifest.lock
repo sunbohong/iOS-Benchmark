@@ -1,12 +1,17 @@
 PODS:
+  - Mantle (2.1.0):
+    - Mantle/extobjc (= 2.1.0)
+  - Mantle/extobjc (2.1.0)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
+  - Mantle (~> 2.1.0)
   - YYModel (~> 1.0.4)
 
 SPEC CHECKSUMS:
+  Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: a2cff41083535052693b524129bf13caec241115
+PODFILE CHECKSUM: 14c023e8dbeb1e07d89da1b7089ab5b8ff92b439
 
 COCOAPODS: 1.2.0

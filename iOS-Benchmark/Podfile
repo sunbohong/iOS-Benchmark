@@ -6,10 +6,11 @@ target 'iOS-Benchmark' do
   # use_frameworks!
 
   # Pods for iOS-Benchmark
+  pod 'Mantle', '~> 2.1.0'
 
   target 'iOS-BenchmarkTests' do
     inherit! :search_paths
-	pod 'YYModel', '~> 1.0.4'
+    pod 'YYModel', '~> 1.0.4'
     # Pods for testing
   end
 

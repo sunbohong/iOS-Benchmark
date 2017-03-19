@@ -14,7 +14,9 @@
 		272B59BB1E7E53A000010720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272B59BA1E7E53A000010720 /* Assets.xcassets */; };
 		272B59BE1E7E53A000010720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272B59BC1E7E53A000010720 /* LaunchScreen.storyboard */; };
 		272B59C91E7E53A000010720 /* iOS_BenchmarkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B59C81E7E53A000010720 /* iOS_BenchmarkTests.m */; };
-		272B59D51E7E54EC00010720 /* SunModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B59D41E7E54EC00010720 /* SunModel.m */; };
+		272B59D51E7E54EC00010720 /* SunModel4YY.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B59D41E7E54EC00010720 /* SunModel4YY.m */; };
+		272B59E11E7E991700010720 /* SunModel4Mantel.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B59E01E7E991700010720 /* SunModel4Mantel.m */; };
+		272B59E61E7EA50800010720 /* SunModel4KVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B59E51E7EA50800010720 /* SunModel4KVC.m */; };
 		E9029919F44411FB1B33F59F /* libPods-iOS-BenchmarkTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94AB4905FB7AC5CECBD31891 /* libPods-iOS-BenchmarkTests.a */; };
 		FD28A7BD613DAC41E86D1AA2 /* libPods-iOS-Benchmark.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5067D3BE2BB6A8F6D7B61E3E /* libPods-iOS-Benchmark.a */; };
 /* End PBXBuildFile section */
@@ -43,8 +45,13 @@
 		272B59C41E7E53A000010720 /* iOS-BenchmarkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-BenchmarkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		272B59C81E7E53A000010720 /* iOS_BenchmarkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_BenchmarkTests.m; sourceTree = "<group>"; };
 		272B59CA1E7E53A000010720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		272B59D31E7E54EC00010720 /* SunModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunModel.h; sourceTree = "<group>"; };
-		272B59D41E7E54EC00010720 /* SunModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunModel.m; sourceTree = "<group>"; };
+		272B59D31E7E54EC00010720 /* SunModel4YY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunModel4YY.h; sourceTree = "<group>"; };
+		272B59D41E7E54EC00010720 /* SunModel4YY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunModel4YY.m; sourceTree = "<group>"; };
+		272B59DA1E7E975600010720 /* SunVideoCatdDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SunVideoCatdDataSource.h; sourceTree = "<group>"; };
+		272B59DF1E7E991700010720 /* SunModel4Mantel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunModel4Mantel.h; sourceTree = "<group>"; };
+		272B59E01E7E991700010720 /* SunModel4Mantel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunModel4Mantel.m; sourceTree = "<group>"; };
+		272B59E41E7EA50800010720 /* SunModel4KVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunModel4KVC.h; sourceTree = "<group>"; };
+		272B59E51E7EA50800010720 /* SunModel4KVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunModel4KVC.m; sourceTree = "<group>"; };
 		49459AA5BD2B65FA28F3C922 /* Pods-iOS-Benchmark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Benchmark.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-Benchmark/Pods-iOS-Benchmark.release.xcconfig"; sourceTree = "<group>"; };
 		5067D3BE2BB6A8F6D7B61E3E /* libPods-iOS-Benchmark.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Benchmark.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94AB4905FB7AC5CECBD31891 /* libPods-iOS-BenchmarkTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-BenchmarkTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,8 +105,13 @@
 			children = (
 				272B59B11E7E53A000010720 /* AppDelegate.h */,
 				272B59B21E7E53A000010720 /* AppDelegate.m */,
-				272B59D31E7E54EC00010720 /* SunModel.h */,
-				272B59D41E7E54EC00010720 /* SunModel.m */,
+				272B59D31E7E54EC00010720 /* SunModel4YY.h */,
+				272B59D41E7E54EC00010720 /* SunModel4YY.m */,
+				272B59E41E7EA50800010720 /* SunModel4KVC.h */,
+				272B59E51E7EA50800010720 /* SunModel4KVC.m */,
+				272B59DF1E7E991700010720 /* SunModel4Mantel.h */,
+				272B59E01E7E991700010720 /* SunModel4Mantel.m */,
+				272B59DA1E7E975600010720 /* SunVideoCatdDataSource.h */,
 				272B59B41E7E53A000010720 /* ViewController.h */,
 				272B59B51E7E53A000010720 /* ViewController.m */,
 				272B59B71E7E53A000010720 /* Main.storyboard */,
@@ -349,10 +361,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				272B59D51E7E54EC00010720 /* SunModel.m in Sources */,
+				272B59D51E7E54EC00010720 /* SunModel4YY.m in Sources */,
 				272B59B61E7E53A000010720 /* ViewController.m in Sources */,
 				272B59B31E7E53A000010720 /* AppDelegate.m in Sources */,
+				272B59E61E7EA50800010720 /* SunModel4KVC.m in Sources */,
 				272B59B01E7E53A000010720 /* main.m in Sources */,
+				272B59E11E7E991700010720 /* SunModel4Mantel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +426,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -459,6 +474,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
